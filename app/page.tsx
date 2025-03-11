@@ -1,10 +1,36 @@
+"use client"
+
 import Image from "next/image";
+import MatrixComponent from "@/app/components/matrixComponent"; // Adjust path as needed
+import { useRouter } from 'next/navigation';
+import { details } from "framer-motion/client";
+import ExperienceComponent from "@/app/components/experienceComponent";
+
 
 export default function Home() {
+
+  const experiences = [
+    {no:1,year:2020,title:"Lorem ipsum 01",details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nulla, ultricies eget sapien vitae, suscipit mollis erat. Maecenas ornare at ipsum ut vulputate. Nullam vitae velit at orci rhoncus commodo. Nunc sit amet ultrices nunc. Fusce viverra arcu nisi, eu aliquam turpis finibus sit amet. Pellentesque at congue tellus, ac eleifend elit. Suspendisse porta diam ex, et iaculis eros dignissim non. Nam commodo luctus diam. Aenean cursus vel turpis nec varius. Maecenas interdum dapibus ultricies. Donec vitae est non leo iaculis egestas vel non ex. Donec at lorem odio."}, 
+    {no:2,year:2020,title:"Lorem ipsum 02",details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nulla, ultricies eget sapien vitae, suscipit mollis erat. Maecenas ornare at ipsum ut vulputate. Nullam vitae velit at orci rhoncus commodo. Nunc sit amet ultrices nunc. Fusce viverra arcu nisi, eu aliquam turpis finibus sit amet. Pellentesque at congue tellus, ac eleifend elit. Suspendisse porta diam ex, et iaculis eros dignissim non. Nam commodo luctus diam. Aenean cursus vel turpis nec varius. Maecenas interdum dapibus ultricies. Donec vitae est non leo iaculis egestas vel non ex. Donec at lorem odio."}, 
+    {no:3,year:2020,title:"Lorem ipsum 03",details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nulla, ultricies eget sapien vitae, suscipit mollis erat. Maecenas ornare at ipsum ut vulputate. Nullam vitae velit at orci rhoncus commodo. Nunc sit amet ultrices nunc. Fusce viverra arcu nisi, eu aliquam turpis finibus sit amet. Pellentesque at congue tellus, ac eleifend elit. Suspendisse porta diam ex, et iaculis eros dignissim non. Nam commodo luctus diam. Aenean cursus vel turpis nec varius. Maecenas interdum dapibus ultricies. Donec vitae est non leo iaculis egestas vel non ex. Donec at lorem odio."}, 
+    {no:4,year:2020,title:"Lorem ipsum 04",details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nulla, ultricies eget sapien vitae, suscipit mollis erat. Maecenas ornare at ipsum ut vulputate. Nullam vitae velit at orci rhoncus commodo. Nunc sit amet ultrices nunc. Fusce viverra arcu nisi, eu aliquam turpis finibus sit amet. Pellentesque at congue tellus, ac eleifend elit. Suspendisse porta diam ex, et iaculis eros dignissim non. Nam commodo luctus diam. Aenean cursus vel turpis nec varius. Maecenas interdum dapibus ultricies. Donec vitae est non leo iaculis egestas vel non ex. Donec at lorem odio."}]
+
+
   return (
-    <div>
-      <text>testname</text>
-    </div>
+    <>
+      <div className="
+      text-white flex justify-center items-center p-4">
+        <MatrixComponent/>
+      </div>
+      <div className="flex flex-col p-4 text-black space-y-1">
+        {experiences.map((_, index) => {
+          const reversedIndex = experiences.length-1 - index;
+          return <ExperienceComponent key={index} index={index}exp={experiences[reversedIndex]} />
+          }
+        )}
+      </div>
+      <div className="bg-green-500 p-4 text-white">Item 3</div>
+    </>
   );
 }
 

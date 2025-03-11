@@ -1,7 +1,25 @@
-/* @import "tailwindcss"; */
+@import "tailwindcss";
 
-/* :root {
-  --background: #ffffff;
+
+.bg-main-color {
+  background-color: rgb(92, 92, 92);
+}
+Torea Bay
+#0f3a85     
+background-color: rgb(15 58 133)
+
+Ebony
+#0b0d21
+
+
+Picton Blue
+#3cbce3
+
+Curious Blue
+#1c7fcc
+
+:root {
+  --background: #cf4a4a;
   --foreground: #171717;
 }
 
@@ -15,12 +33,64 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #d6d6d6;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+.bg-theme {
+  background-color: rgb(92, 92, 92);
+}
+
+.bg-custom {
+  /* background-image: url('/img/desktop-bg.jpg'); */
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.bg-media{
+  width: 80vw; /* Example: Adjust this percentage as needed */
+  height: calc(4 / 3 * 80vw); /* Maintain the 600:800 ratio (4:3) */
+  background-color: lightblue;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Realistic screen shadow */
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .bg-custom {
+    /* background-image: url('/img/desktop-bg.jpg'); */
+    position: absolute;
+    min-height: 1000px;
+    min-width: 800px;
+  }
+  .bg-media {
+    width: 90vw; /* Responsive width */
+    height: calc(90vw * 9 / 16); /* Maintain 16:9 aspect ratio */
+    max-width: 800px; /* Prevent excessive scaling */
+    max-height: 450px; /* Keep aspect ratio */
+    background-color: black; /* Screen background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Realistic screen shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Optional: Add a bezel effect */
+  .bg-media::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #c5c1c1; /* Dark gray for bezel effect */
+    border-radius: 10px;
+  }
+}
