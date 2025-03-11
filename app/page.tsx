@@ -18,11 +18,12 @@ export default function Home() {
 
   return (
     <>
-      <div className="
-      text-white flex justify-center items-center p-4">
+      <div className="text-white flex justify-center items-center p-4">
         <MatrixComponent/>
       </div>
+
       <div className="flex flex-col p-4 text-black space-y-1">
+        <div className="absolute left-1/2 top-0 h-full w-[2px] bg-gray-400 -translate-x-1/2"></div>
         {experiences.map((_, index) => {
           const reversedIndex = experiences.length-1 - index;
           return <ExperienceComponent key={index} index={index}exp={experiences[reversedIndex]} />

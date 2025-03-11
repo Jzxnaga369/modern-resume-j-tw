@@ -1,26 +1,23 @@
 @import "tailwindcss";
 
-
-.bg-main-color {
-  background-color: rgb(92, 92, 92);
-}
-Torea Bay
-#0f3a85     
-background-color: rgb(15 58 133)
-
-Ebony
-#0b0d21
-
-
-Picton Blue
-#3cbce3
-
-Curious Blue
-#1c7fcc
-
 :root {
   --background: #cf4a4a;
   --foreground: #171717;
+}
+
+.bg-main-color {
+  /* Torea Bay */
+  background: #0f3a85;
+  background-color: rgb(15 58 133);
+  /* Ebony */
+  background: #0b0d21;
+  background-color: rgb(11 13 33);
+  /* Picton Blue */
+  background: #3cbce3;
+  background-color: rgb(60 188 227);
+  /* Curious Blue */
+  background: #1c7fcc;
+  background-color: rgb(28 127 204);
 }
 
 @theme inline {
