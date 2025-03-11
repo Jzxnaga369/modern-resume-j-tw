@@ -23,7 +23,7 @@ export default function ExperienceComponent({index,exp}:ExperienceProps) {
 
     return (
         <div className={`flex flex-col ${itemsPosition ? "items-end" : "items-start"} w-full h-[100px]`}>
-            <div className="absolute bg-white w-[45%] h-[140px]">
+            <div className="w-[45%] h-[140px] responsive-card p-4">
               <h1>{exp.no}</h1>
               <h1>{exp.year}</h1>
             </div>

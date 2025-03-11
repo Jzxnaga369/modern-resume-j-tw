@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import { Providers } from "./providers";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,23 +21,15 @@ export const metadata: Metadata = {
   description: "Resume with tailwind css",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) 
-{
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en">
       <body className="min-h-screen flex-col">
-      {/* <div className="flex justify-center min-h-screen">
-            <div className="w-[200px] h-[200px] bg-red-500 border border-">
-              <p className="text-red-500 text-2xl">Tailwind is working?</p>
-            </div>
-          </div> */}
-        <div className="flex flex-col space-y-0 p-4 bg-theme">
+      {/* <Providers className="flex flex-col space-y-0 p-4 bg-theme"> */}
+        <Providers>
           {children}
-        </div>
+        </Providers>
+
       </body>
     </html>
   );

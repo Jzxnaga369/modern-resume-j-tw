@@ -34,6 +34,10 @@
   }
 }
 
+.bg-main-line{
+  background-color: rgb(60 188 227);
+}
+
 .bg-theme {
   background-color: rgb(92, 92, 92);
 }
@@ -45,10 +49,25 @@
   
 }
 
-.bg-media{
+.responsive-width{
   width: 80vw; /* Example: Adjust this percentage as needed */
+  max-width: 750px; /* Prevent excessive scaling */
+}
+
+.responsive-width-2{
+  width: 80vw; /* Example: Adjust this percentage as needed */
+  max-width: 1000px; /* Prevent excessive scaling */
+}
+
+.responsive-card{
+  position: absolute;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Realistic screen shadow */
+  background-color: rgba(246, 246, 246, 0.5);
+}
+
+.bg-media{
   height: calc(4 / 3 * 80vw); /* Maintain the 600:800 ratio (4:3) */
-  background-color: lightblue;
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Realistic screen shadow */
   padding: 15px;
@@ -58,17 +77,19 @@
   position: relative;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 750px) {
   .bg-custom {
     /* background-image: url('/img/desktop-bg.jpg'); */
     position: absolute;
     min-height: 1000px;
-    min-width: 800px;
+    min-width: 750px;
+  }
+  .responsive-width{
+    width: 90vw; /* Example: Adjust this percentage as needed */
   }
   .bg-media {
-    width: 90vw; /* Responsive width */
     height: calc(90vw * 9 / 16); /* Maintain 16:9 aspect ratio */
-    max-width: 800px; /* Prevent excessive scaling */
+    max-width: 750px; /* Prevent excessive scaling */
     max-height: 450px; /* Keep aspect ratio */
     background-color: black; /* Screen background */
     border-radius: 15px; /* Rounded corners */

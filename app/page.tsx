@@ -16,22 +16,26 @@ export default function Home() {
     {no:4,year:2020,title:"Lorem ipsum 04",details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nulla, ultricies eget sapien vitae, suscipit mollis erat. Maecenas ornare at ipsum ut vulputate. Nullam vitae velit at orci rhoncus commodo. Nunc sit amet ultrices nunc. Fusce viverra arcu nisi, eu aliquam turpis finibus sit amet. Pellentesque at congue tellus, ac eleifend elit. Suspendisse porta diam ex, et iaculis eros dignissim non. Nam commodo luctus diam. Aenean cursus vel turpis nec varius. Maecenas interdum dapibus ultricies. Donec vitae est non leo iaculis egestas vel non ex. Donec at lorem odio."}]
 
 
+
   return (
-    <>
+    <div className="flex flex-col items-center">
       <div className="text-white flex justify-center items-center p-4">
         <MatrixComponent/>
       </div>
 
-      <div className="flex flex-col p-4 text-black space-y-1">
-        <div className="absolute left-1/2 top-0 h-full w-[2px] bg-gray-400 -translate-x-1/2"></div>
-        {experiences.map((_, index) => {
-          const reversedIndex = experiences.length-1 - index;
-          return <ExperienceComponent key={index} index={index}exp={experiences[reversedIndex]} />
-          }
-        )}
+      <div className="flex flex-col p-4 text-black space-y-1 responsive-width-2">
+        <div className="relative w-full flex flex-col items-center">
+          <div className="absolute left-1/2 h-full w-[10px] bg-main-line -translate-x-1/2"></div>
+          {experiences.map((_, index) => {
+            const reversedIndex = experiences.length-1 - index;
+            return <ExperienceComponent key={index} index={index}exp={experiences[reversedIndex]} />
+            }
+          )}
+        </div>
       </div>
+      
       <div className="bg-green-500 p-4 text-white">Item 3</div>
-    </>
+    </div>
   );
 }
 

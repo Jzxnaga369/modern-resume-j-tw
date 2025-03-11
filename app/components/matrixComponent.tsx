@@ -28,7 +28,7 @@ export default function AnotherPage() {
     const rainDrops = new Array(columns).fill(1);
 
     const draw = () => {
-      context.fillStyle = "rgba(246, 246, 246, 0.5)"; // White background
+      context.fillStyle = "rgba(246, 246, 246, 0.5)"; // Background TV disini
       context.fillRect(0, 0, canvas.width, canvas.height);
 
       context.fillStyle = "#0F0";
@@ -52,8 +52,6 @@ export default function AnotherPage() {
   }, []);
 
   return (
-    // <div className="flex bg-white">
-      <canvas ref={canvasRef} className= "top-0 left-0 bg-media"></canvas>
-    // </div>
+    <canvas ref={canvasRef} className= "top-0 left-0 bg-media responsive-width"></canvas>
   );
 }
