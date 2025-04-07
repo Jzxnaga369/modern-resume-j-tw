@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { Providers } from "./providers";
+import NavbarComponent from "@/app/components/navbarComponent"
 
 import "./globals.css";
 
@@ -27,7 +28,8 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
       <body className="min-h-screen flex-col">
       {/* <Providers className="flex flex-col space-y-0 p-4 bg-theme"> */}
         <Providers>
-          {children}
+          <NavbarComponent/>
+            {children}
         </Providers>
 
       </body>

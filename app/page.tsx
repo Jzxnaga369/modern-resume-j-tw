@@ -5,6 +5,9 @@ import MatrixComponent from "@/app/components/matrixComponent"; // Adjust path a
 import { useRouter } from 'next/navigation';
 import { details } from "framer-motion/client";
 import ExperienceComponent from "@/app/components/experienceComponent";
+import ThreeScene from "@/app/components/threeScene";
+
+
 
 
 export default function Home() {
@@ -19,9 +22,13 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center">
+      {/* <nav className="fixed top-0 w-full bg-black p-4 text-white transition-all hover:bg-gray-800">
+        <h1 className="text-xl">My Navbar</h1>
+      </nav> */}
       <div className="text-white flex justify-center items-center p-4">
         <MatrixComponent/>
       </div>
+        <ThreeScene/>
 
       <div className="flex flex-col p-4 text-black space-y-1 responsive-width-2">
         <div className="relative w-full flex flex-col items-center">
